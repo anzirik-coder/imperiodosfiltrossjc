@@ -1,0 +1,537 @@
+/* =========================================
+   1. CONFIGURAÇÕES GERAIS E LAYOUT
+   ========================================= */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  background: #f5f5f5;
+  color: #333;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px 0;
+}
+
+/* =========================================
+   2. BOTÕES E COMPONENTES GERAIS
+   ========================================= */
+.botao {
+  background: rgba(239, 128, 36, 1);
+  color: white;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 20px;
+  transition: background 0.3s, transform 0.2s;
+  box-shadow: 0 4px 15px rgba(239, 128, 36, 0.3);
+}
+
+.botao:hover {
+  background: rgba(210, 110, 30, 1);
+  transform: scale(1.05);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #111;
+  margin-bottom: 40px;
+}
+
+.subtitle {
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* =========================================
+   3. CABEÇALHO (HEADER & NAV)
+   ========================================= */
+header {
+  background: #111;
+  color: white;
+  padding: 10px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav > a {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 100px !important;
+  width: auto;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: none;
+  transition: transform 0.3s ease;
+  display: block;
+  object-fit: cover;
+}
+
+nav div a {
+  color: white;
+  text-decoration: none;
+  margin-left: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+nav div a.ativo,
+nav div a:hover {
+  color: rgba(239, 128, 36, 1) !important;
+  font-weight: 900 !important;
+}
+
+/* Ícones de Redes Sociais no Menu */
+.icone-rede {
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.icone-rede:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+.link-icone {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 15px; 
+  color: inherit;
+}
+
+/* =========================================
+   4. SEÇÃO HERO (BANNER PRINCIPAL)
+   ========================================= */
+.hero {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('../img/image_8.webp'); 
+  background-size: cover;
+  background-position: center 60%; 
+  background-repeat: no-repeat;
+  color: white;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+/* =========================================
+   5. SEÇÃO DE MARCAS (PROVA SOCIAL)
+   ========================================= */
+.marcas-confianca {
+  background: #fff;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.container-marcas {
+  text-align: center;
+  padding-top: 0; 
+}
+
+.marcas-grid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.marca-logo {
+  height: 60px;
+  max-width: 150px;
+  width: auto;
+  filter: grayscale(100%);
+  opacity: 0.6;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.marca-logo:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* =========================================
+   6. SERVIÇOS E DIFERENCIAIS
+   ========================================= */
+.nossos-servicos {
+  background: #f9f9f9;
+}
+
+.servicos {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 30px;       
+  justify-content: center;
+}
+
+.card {
+  background: white;
+  flex: 0 1 calc(50% - 15px); 
+  min-width: 300px; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  border-bottom: 5px solid rgba(239, 128, 36, 1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.servico-img {
+  width: 100%;
+  height: 250px; 
+  object-fit: cover;
+  display: block;
+}
+
+.card h3 {
+  padding: 25px 20px 10px;
+  margin: 0;
+  color: #111;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.card p {
+  padding: 0 25px 30px;
+  margin: 0;
+  color: #666;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Diferenciais */
+.diferenciais-conteudo {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.diferenciais-conteudo p {
+  max-width: 800px;
+  margin: 0 auto 30px auto;
+  color: #666;
+  line-height: 1.6;
+}
+
+.lista-diferenciais {
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.lista-diferenciais li {
+  padding: 15px 0;
+  border-bottom: 1px solid #ddd;
+  font-size: 1.1rem;
+}
+
+.lista-diferenciais li strong {
+  color: rgba(239, 128, 36, 1);
+}
+
+/* =========================================
+   7. PÁGINAS INTERNAS DE SERVIÇOS
+   ========================================= */
+.vantagens {
+  background: #fff;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  margin-top: 30px;
+  text-align: left;
+}
+
+.lista-oleo {
+  list-style: none;
+  padding: 0;
+}
+
+.lista-oleo li {
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.lista-oleo li:last-child {
+  border-bottom: none;
+}
+
+.check-icon {
+  color: #ef8024;
+  margin-right: 15px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.texto-informativo {
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+}
+
+/* =========================================
+   8. RODAPÉ (FOOTER ELEGANTE)
+   ========================================= */
+.footer-elegante {
+  background-color: #0d0d0d;
+  padding: 30px 20px 20px 20px; 
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 300;
+}
+
+.footer-elegante-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.footer-col h3 {
+  font-family: 'Montserrat', serif;
+  color: #ffffff; 
+  font-weight: 400;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.footer-logo-text {
+  font-family: 'Montserrat', serif;
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.footer-logo-img {
+  height: 80px;
+  width: auto;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  display: block;
+  object-fit: cover;
+}
+
+.footer-col p, 
+.footer-col ul li a {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: #cccccc; 
+  text-decoration: none;
+}
+
+.footer-col a:hover {
+  color: #ffffff;
+}
+
+.info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  color: #cccccc;
+  text-decoration: none;
+}
+
+.info-item span {
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.info-item svg {
+  width: 18px;
+  height: 18px;
+  stroke: #ffffff;
+  fill: none;
+  stroke-width: 2;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.link-contato:hover span, 
+.link-endereco:hover span {
+  color: #ffffff;
+}
+
+.link-contato:hover svg, 
+.link-endereco:hover svg {
+  transform: scale(1.1);
+}
+
+/* Ícones Sociais do Rodapé */
+.footer-social {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  justify-content: flex-start; 
+}
+
+.icone-footer svg {
+  width: 20px !important;  
+  height: 20px !important;
+  stroke: #cccccc;        
+  transition: all 0.3s ease;
+}
+
+.icone-footer:hover svg {
+  stroke: #ffffff;        
+  transform: scale(1.1);  
+}
+
+.footer-bottom {
+  max-width: 1200px;
+  margin: 20px auto 0 auto; 
+  padding-top: 15px;
+  border-top: 1px solid #333333;
+  font-size: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; 
+  gap: 20px;
+  color: #999999;
+}
+
+.footer-bottom p { 
+  margin: 0; 
+}
+
+/* =========================================
+   9. WIDGETS (WHATSAPP FLUTUANTE E LGPD)
+   ========================================= */
+/* Botão WhatsApp Flutuante */
+.btn-whatsapp-flutuante {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background-color: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  text-decoration: none;
+}
+
+.whatsapp-icone {
+  width: 32px;
+  height: 32px;
+  position: relative;
+  z-index: 5;
+}
+
+.btn-pulse-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #25d366;
+  border-radius: 50%;
+  animation: pulse-sonar 2s infinite;
+}
+
+@keyframes pulse-sonar {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* LGPD Banner */
+.lgpd-fixo {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 900px;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 20px 30px;
+  border-radius: 50px;
+  z-index: 10001;
+  display: none;
+  border: 1px solid #333;
+}
+
+.lgpd-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-aceitar-lgpd {
+  background: #ef8024;
+  color: #fff;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* =========================================
+   10. RESPONSIVIDADE (MEDIA QUERIES)
+   ========================================= */
+@media (max-width: 768px) {
+  nav { 
+    flex-direction: column; 
+    gap: 15px; 
+  }
+  .logo-img { 
+    height: 70px !important; 
+  }
+  .card { 
+    flex: 1 1 100%; 
+  }
+}
