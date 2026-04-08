@@ -116,8 +116,11 @@ function initCookieBanner() {
     
     // Evento do botão aceitar
     btnAceitar.addEventListener('click', function() {
-        // Salvar no localStorage
-        localStorage.setItem('lgpd-accepted', 'true');
+        try {
+            localStorage.setItem('lgpd-accepted', 'true');
+        } catch (error) {
+            console.warn('Não foi possível salvar a preferência de cookies:', error);
+        }
         
         // Ocultar banner com animação
         banner.style.transition = 'opacity 0.3s ease-out';
