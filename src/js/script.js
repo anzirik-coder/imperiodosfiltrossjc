@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadComponent('header-placeholder', basePath + 'components/header.html', basePath);
     loadComponent('footer-placeholder', basePath + 'components/footer.html', basePath);
+    
+    // Inicializar banner de cookies
+    initCookieBanner();
 });
 
 async function loadComponent(elementId, componentPath, basePath) {
@@ -92,5 +95,36 @@ function setActiveLink() {
         if (linkPath === current || linkPath === current + '/' || linkPath === current + 'index.html' || linkPath.endsWith(current.replace(/^.*\//, ''))) {
             link.classList.add('ativo');
         }
+    });
+}
+
+// Função para controlar o banner de cookies (LGPD)
+function initCookieBanner() {
+    const banner = document.getElementById('lgpd-banner');
+    const btnAceitar = document.getElementById('lgpd-aceitar');
+    
+    if (!banner || !btnAceitar) return;
+    
+    // Verificar se o usuário já aceitou os cookies
+    if (localStorage.getItem('lgpd-accepted') === 'true') {
+        banner.style.display = 'none';
+        return;
+    }
+    
+    // Mostrar banner
+    banner.style.display = 'block';
+    
+    // Evento do botão aceitar
+    btnAceitar.addEventListener('click', function() {
+        // Salvar no localStorage
+        localStorage.setItem('lgpd-accepted', 'true');
+        
+        // Ocultar banner com animação
+        banner.style.transition = 'opacity 0.3s ease-out';
+        banner.style.opacity = '0';
+        
+        setTimeout(function() {
+            banner.style.display = 'none';
+        }, 300);
     });
 }
