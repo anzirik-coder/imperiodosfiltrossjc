@@ -8,109 +8,22 @@
       name="description"
       content="Linha completa de filtros automotivos: óleo, ar, combustível e cabine. Proteja seu motor com as melhores marcas em São José dos Campos."
     />
-
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/logo-imperio.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../img/logo-imperio.png">
+    <link rel="apple-touch-icon" href="../img/logo-imperio.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style.css?v=1" />
 
     <style>
-      /* --- Estilos de Layout --- */
-      .sobre-container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 50px;
-        align-items: flex-start; /* Alinha o topo do texto com o topo da foto */
-        margin-top: 40px;
-      }
-
-      .sobre-texto {
-        flex: 1;
-        min-width: 300px;
-        line-height: 1.8;
-        font-size: 1.1rem;
-        color: #444;
-      }
-
-      /* Alinhamento perfeito do título com a imagem */
-      .sobre-texto h2 {
-        color: #111;
-        margin-top: 0; 
-        margin-bottom: 20px;
-        font-size: 1.8rem;
-        line-height: 1.2; 
-      }
-      .sobre-texto h3 {
-        color: #155724; /* Verde escuro para subtítulos */
-        margin-top: 25px;
-        font-size: 1.4rem;
-      }
-
-      .sobre-imagem {
-        flex: 1;
-        min-width: 300px;
-        margin-top: 125px;
-      }
-
-      .sobre-imagem img {
-        width: 100%;
-        border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        display: block;
-      }
-
-      .destaque-laranja {
-        color: #ef8024;
-        font-weight: bold;
-      }
-
-      /* --- Estilos de Interatividade (Efeito de Revelação) --- */
-      .revelar {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: opacity 1s ease-out, transform 1s ease-out;
-      }
-
-      .revelar.ativo {
-        opacity: 1;
-        transform: translateY(0);
-      }
+              /* --- ESTILOS ESPECÍFICOS */
     </style>
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="../index.html">
-          <picture>
-            <source srcset="../img/logo-imperio.webp" type="image/webp" />
-            <img src="../img/logo-imperio.png" class="logo-img" alt="Logo Império dos Filtros" style="height: 100px; width: auto;" />
-          </picture>
-        </a>
-        
-        <div>
-          <a href="../index.html">Home</a>
-          <a href="troca_de_oleo_sjc.html">Troca de Óleo SJC</a>
-          <a href="filtros_sjc.html">Filtros SJC</a>
-          <a href="blog.html">Blog</a>
-          <a href="sobre.html" class="ativo">Sobre Nós</a>
-          <a href="contato.html">Contato</a>
-          
-          <a href="https://wa.me/5512974043404?text=Olá,%20estou%20no%20site%20da%20Império%20dos%20Filtros!" target="_blank" rel="noopener noreferrer" class="link-icone" title="Fale no WhatsApp">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icone-rede">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-            </svg>
-          </a>
-          <a href="https://www.instagram.com/imperiodosfiltrosofc" target="_blank" rel="noopener noreferrer" class="link-icone" title="Siga no Instagram">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icone-rede">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-            </svg>
-          </a>
-        </div>
-        </nav>
-    </header>
+    <div id="header-placeholder"></div>
+
 
     <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.4)), url('../img/sobre.webp'); background-size: cover; background-position: center;">
       <h1>Nossa História</h1>
@@ -150,63 +63,7 @@
       </div>
     </main>
 
- <footer class="footer-elegante">
-    <div class="footer-elegante-container">
-        <div class="footer-col">
-            <a href="index.html">
-                <picture>
-                    <source srcset="../img/logo-imperio.webp" type="image/webp">
-                    <img src="../img/logo-imperio.png" class="footer-logo-img" alt="Logo Império dos Filtros" loading="lazy" />
-                </picture>
-            </a>
-            <span class="footer-logo-text">Império dos Filtros</span>
-            <p>Especializada em troca de óleo, lubrificação e filtros originais em São José dos Campos/SP, transformando a manutenção em confiança e qualidade.</p>
-        </div>
 
-        <div class="footer-col">
-            <h3>Contato</h3>
-            <p class="horario-atendimento">Atendimento das 08:00 às 18:00<br>(Sábados até 12:00)</p>
-            
-            <a href="https://wa.me/5512974043404" target="_blank" rel="noopener noreferrer" class="info-item link-contato">
-                <svg viewBox="0 0 24 24"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                <span>(12) 97404-3404</span>
-            </a>
-        </div>
-
-        <div class="footer-col">
-            <h3>Institucional</h3>
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="troca_de_oleo_sjc.html">Troca de Óleo em SJC</a></li>
-                <li><a href="filtros_sjc.html">Filtros SJC</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contato.html">Contato</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h3>Onde nos encontrar</h3>
-            <a href="https://www.google.com/maps/search/?api=1&query=R.+Andorra,+165+-+Jd.+América,+São+José+dos+Campos+-+SP,+12235-050" target="_blank" rel="noopener noreferrer" class="info-item link-endereco">
-                <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-                <span>R. Andorra, 165 - Jd. América<br>SJC - SP, 12235-050</span>
-            </a>
-            
-            <div class="footer-social">
-                <a href="https://wa.me/5512974043404" target="_blank" rel="noopener noreferrer" class="icone-footer">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
-                </a>
-                <a href="https://www.instagram.com/imperiodosfiltrosofc" target="_blank" rel="noopener noreferrer" class="icone-footer">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <div class="footer-bottom">
-        <p>© 2026 Império dos Filtros - Todos os direitos reservados.</p>
-        <a href="../politica.html">Política de Privacidade</a>
-    </div>
-</footer>
 
     <a href="https://wa.me/5512974043404?text=Olá!%20Vim%20pelo%20site%20e%20quero%20fazer%20uma%20troca%20de%20óleo%20🚗" class="btn-whatsapp-flutuante" target="_blank" rel="noopener noreferrer" title="Falar no WhatsApp">
         <span class="btn-pulse-ring"></span>
@@ -217,6 +74,7 @@
     </a>
 
     <script>
+      // Efeito de revelar ao rolar a página
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -226,7 +84,29 @@
       }, { threshold: 0.1 });
 
       document.querySelectorAll('.revelar').forEach((el) => observer.observe(el));
+
+      // Lógica de abertura/fechamento do menu Hamburguer
+      const btnMenu = document.getElementById('btn-menu');
+      const menuLinks = document.getElementById('menu-links');
+
+      if (btnMenu && menuLinks) {
+          btnMenu.addEventListener('click', () => {
+              menuLinks.classList.toggle('active');
+              btnMenu.classList.toggle('open');
+          });
+
+          const links = menuLinks.querySelectorAll('a');
+          links.forEach(link => {
+              link.addEventListener('click', () => {
+                  menuLinks.classList.remove('active');
+                  btnMenu.classList.remove('open');
+              });
+          });
+      }
     </script>
+
+    <div id="footer-placeholder"></div>
+
     <script src="../src/js/script.js"></script>
   </body>
 </html>
