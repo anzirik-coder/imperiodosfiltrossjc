@@ -217,15 +217,31 @@ nav > a {
 
 .marca-logo {
     height: 75px;
-    filter: grayscale(100%);
-    opacity: 0.6;
-    transition: 0.4s;
+    opacity: 1;
+    filter: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    animation: pulse-logo 2.8s ease-in-out infinite;
+}
+
+.marca-logo[alt="Lubrax"],
+.marca-logo[alt="Mobil"],
+.marca-logo[alt="Motorcraft"],
+.marca-logo[alt="Acdelco"] {
+    height: 90px;
 }
 
 .marca-logo:hover {
-    filter: grayscale(0%);
+    transform: scale(1.18);
     opacity: 1;
-    transform: scale(1.15);
+}
+
+@keyframes pulse-logo {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.08);
+    }
 }
 
 /* ============================================================
