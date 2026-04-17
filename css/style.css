@@ -608,7 +608,7 @@ nav > a {
         transform: translateY(-8px);
         transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
         box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-        z-index: 1200;
+        z-index: 50000 !important;
     }
 
     .nav-menu-container.ativo {
@@ -620,7 +620,7 @@ nav > a {
 
     .menu-hamburguer {
         position: relative;
-        z-index: 1300;
+        z-index: 50001 !important;
     }
 
     .nav-link {
@@ -656,6 +656,7 @@ nav > a {
         visibility: hidden;
         pointer-events: none;
         transform: translateY(100%);
+        display: none !important;
     }
 
     body.menu-mobile-aberto .btn-whatsapp-flutuante,
@@ -664,6 +665,7 @@ nav > a {
         visibility: hidden;
         pointer-events: none;
         transform: translateY(20px);
+        display: none !important;
     }
 
     body.menu-mobile-aberto {
