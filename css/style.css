@@ -608,7 +608,7 @@ nav > a {
         transform: translateY(-8px);
         transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
         box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-        z-index: 50000 !important;
+        z-index: 3000;
     }
 
     .nav-menu-container.ativo {
@@ -620,7 +620,7 @@ nav > a {
 
     .menu-hamburguer {
         position: relative;
-        z-index: 50001 !important;
+        z-index: 3001;
     }
 
     .nav-link {
