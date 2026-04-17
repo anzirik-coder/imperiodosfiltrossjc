@@ -670,6 +670,16 @@ nav > a {
 
     body.menu-mobile-aberto {
         overflow: hidden;
+        background-color: #1a1a1a;
+    }
+
+    body.menu-mobile-aberto > *:not(#header-placeholder) {
+        visibility: hidden;
+    }
+
+    body.menu-mobile-aberto > #header-placeholder,
+    body.menu-mobile-aberto > #header-placeholder * {
+        visibility: visible;
     }
 }
 
