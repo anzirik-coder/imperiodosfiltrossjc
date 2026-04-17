@@ -646,6 +646,18 @@ nav > a {
         pointer-events: none;
         transform: translateY(100%);
     }
+
+    body.menu-mobile-aberto .btn-whatsapp-flutuante,
+    body.menu-mobile-aberto .snackbar-container {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(20px);
+    }
+
+    body.menu-mobile-aberto {
+        overflow: hidden;
+    }
 }
 
 @media (max-width: 768px) {
