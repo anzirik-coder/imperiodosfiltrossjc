@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sjcimperiodosfiltros.com.br/sitemap.xml
