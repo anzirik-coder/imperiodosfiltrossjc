@@ -68,17 +68,35 @@ function initMenuToggle() {
     const menuLinks = document.getElementById('menu-links');
     if (!btnMenu || !menuLinks) return;
 
+    function syncMenuState() {
+        const isOpen = menuLinks.classList.contains('ativo');
+        btnMenu.setAttribute('aria-expanded', String(isOpen));
+        document.body.classList.toggle('menu-mobile-aberto', isOpen);
+    }
+
     btnMenu.addEventListener('click', function() {
         menuLinks.classList.toggle('ativo');
         btnMenu.classList.toggle('ativo');
+        syncMenuState();
     });
 
     menuLinks.querySelectorAll('a').forEach(function(link) {
         link.addEventListener('click', function() {
             menuLinks.classList.remove('ativo');
             btnMenu.classList.remove('ativo');
+            syncMenuState();
         });
     });
+
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 992 && menuLinks.classList.contains('ativo')) {
+            menuLinks.classList.remove('ativo');
+            btnMenu.classList.remove('ativo');
+            syncMenuState();
+        }
+    });
+
+    syncMenuState();
 }
 
 function setActiveLink() {
