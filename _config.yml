@@ -1,0 +1,36 @@
+# GitHub Pages Jekyll Configuration
+# Configuração para servir sitemap.xml com MIME type correto
+
+# Diretório de saída
+destination: _site
+
+# Processar arquivos
+include:
+  - sitemap.xml
+  - robots.txt
+
+# MIME types customizados
+# Nota: GitHub Pages usa Rack, que detecta MIME types automaticamente
+# Se isso não funcionar, usar redirecionamento via script
+
+# Tema
+theme: null
+
+# Remover processamento Jekyll para arquivos específicos
+keep_files:
+  - sitemap.xml
+  - robots.txt
+  - CNAME
+  - .htaccess
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+# URL do site
+url: "https://sjcimperiodosfiltros.com.br"
+baseurl: ""
+
+# Metadata
+title: "Império dos Filtros"
+description: "Especialistas em troca de óleo e filtros automotivos em São José dos Campos"

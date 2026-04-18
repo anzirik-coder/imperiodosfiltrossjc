@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     loadComponent('header-placeholder', basePath + 'components/header.html', basePath);
     loadComponent('footer-placeholder', basePath + 'components/footer.html', basePath);
+    optimizeImages();
     
     // Inicializar banner de cookies
     initCookieBanner();
@@ -20,10 +21,7 @@ async function loadComponent(elementId, componentPath, basePath) {
     if (!placeholder) return;
 
     try {
-        const response = await fetch(componentPath);
-        if (!response.ok) throw new Error('Erro ' + response.status);
-
-        const html = await response.text();
+        const html = await fetchComponentWithCache(componentPath);
         placeholder.innerHTML = html;
         normalizePaths(placeholder, basePath);
 
@@ -35,6 +33,35 @@ async function loadComponent(elementId, componentPath, basePath) {
         console.error('Erro ao carregar ' + elementId + ':', error);
         placeholder.innerHTML = '<p>Erro ao carregar componente</p>';
     }
+}
+
+async function fetchComponentWithCache(componentPath) {
+    const cacheKey = 'component-cache:' + componentPath;
+    const cached = sessionStorage.getItem(cacheKey);
+
+    if (cached) {
+        return cached;
+    }
+
+    const response = await fetch(componentPath);
+    if (!response.ok) throw new Error('Erro ' + response.status);
+
+    const html = await response.text();
+    sessionStorage.setItem(cacheKey, html);
+    return html;
+}
+
+function optimizeImages() {
+    window.requestAnimationFrame(function() {
+        document.querySelectorAll('img').forEach(function(img, index) {
+            if (!img.hasAttribute('decoding')) {
+                img.setAttribute('decoding', 'async');
+            }
+            if (!img.hasAttribute('loading')) {
+                img.setAttribute('loading', index < 2 ? 'eager' : 'lazy');
+            }
+        });
+    });
 }
 
 function normalizePaths(container, basePath) {

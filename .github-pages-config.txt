@@ -1,0 +1,13 @@
+# Configuração para GitHub Pages
+# Força reconhecimento de arquivos como tipos corretos
+
+# Se estiver usando GitHub Pages com Apache/Nginx personalizado
+
+# Para GitHub Pages: coloque isso em .github/workflows/deploy.yml se usar ações customizadas
+# Ou atualize o repositório com deploy customizado
+
+# Configuração de mimetype (se tiver controle sobre servidor)
+# AddType application/xml .xml
+
+# Redirecionamento se necessário
+# Redirect 301 /sitemap.html /sitemap.xml

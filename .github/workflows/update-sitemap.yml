@@ -1,0 +1,61 @@
+name: 🔄 Atualizar Sitemap
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - '**.html'
+      - '.github/workflows/update-sitemap.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-sitemap:
+    runs-on: ubuntu-latest
+    name: Gerar Sitemap
+    
+    steps:
+      - name: 📥 Checkout código
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: 🐍 Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      
+      - name: 🔧 Instalar dependências
+        run: |
+          python -m pip install --upgrade pip
+          pip install lxml
+      
+      - name: 📝 Gerar sitemap.xml
+        run: python .github/scripts/generate_sitemap.py
+      
+      - name: 📊 Validar sitemap gerado
+        run: python .github/scripts/validate_sitemap.py
+      
+      - name: 🚀 Commit e Push (se houver mudanças)
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          if git diff --quiet sitemap.xml; then
+            echo "✅ Sitemap sem mudanças"
+          else
+            echo "📝 Sitemap atualizado!"
+            git add sitemap.xml
+            git commit -m "chore: atualizar sitemap [skip ci]"
+            git push
+          fi
+      
+      - name: 🎯 Notificar Google
+        run: |
+          curl -s "https://www.google.com/ping?sitemap=https://sjcimperiodosfiltros.com.br/sitemap.xml" || true
+          echo "✓ Google notificado"

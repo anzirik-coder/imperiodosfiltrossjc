@@ -220,7 +220,13 @@ nav > a {
     opacity: 1;
     filter: none;
     transition: transform 0.3s ease, opacity 0.3s ease;
-    animation: pulse-logo 2.8s ease-in-out infinite;
+    animation: none;
+}
+
+@media (hover: hover) {
+    .marca-logo {
+        animation: pulse-logo 3.6s ease-in-out infinite;
+    }
 }
 
 .marca-logo[alt="Lubrax"],
@@ -761,4 +767,11 @@ nav > a {
         width: 100%;
         max-width: 200px;
     }
+}
+
+.marcas-confianca,
+.nossos-servicos,
+.diferenciais {
+    content-visibility: auto;
+    contain-intrinsic-size: 1px 800px;
 }
