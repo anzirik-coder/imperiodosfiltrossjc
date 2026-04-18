@@ -9,6 +9,12 @@ body {
     overflow-x: hidden;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 .container {
     width: 90%;
     max-width: 1100px;
@@ -325,7 +331,7 @@ nav > a {
 .post-header {
     background: linear-gradient(145deg, #121212 0%, #1f1f1f 100%);
     color: #fff;
-    padding: 28px 24px;
+    padding: 32px 36px;
     margin-bottom: 30px;
 }
 
@@ -349,7 +355,7 @@ nav > a {
 
 .post-article picture {
     display: block;
-    padding: 0 24px;
+    padding: 0 36px;
 }
 
 .post-article picture img {
@@ -357,7 +363,7 @@ nav > a {
 }
 
 .post-article section {
-    padding: 0 24px 28px;
+    padding: 0 36px 36px;
 }
 
 .post-article blockquote {
@@ -385,8 +391,8 @@ nav > a {
 
     .post-article picture,
     .post-article section {
-        padding-left: 18px;
-        padding-right: 18px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .post-article section {
@@ -480,7 +486,7 @@ nav > a {
 .diferenciais-conteudo h2,
 .diferenciais-conteudo p {
     width: 100%;
-    max-width: 700px;
+    max-width: 640px;
 }
 
 .diferenciais-conteudo .lista-diferenciais {
@@ -488,11 +494,15 @@ nav > a {
     text-align: left;
     padding: 0;
     margin: 0 auto;
+    width: 100%;
+    max-width: 640px;
 }
 
 .diferenciais-conteudo p,
 .diferenciais-conteudo .lista-diferenciais li {
-    text-align: justify;
+    text-align: left;
+    overflow-wrap: break-word;
+    word-break: normal;
 }
 
 .diferenciais-conteudo p {
@@ -787,12 +797,38 @@ nav > a {
 }
 
 @media (max-width: 768px) {
+    .container {
+        width: calc(100% - 48px);
+    }
+
     .hero h1 { font-size: 1.8rem; }
     .section-title { font-size: 1.8rem; }
     .card { flex: 1 1 100%; }
     .footer-elegante-container { flex-direction: column; text-align: center; }
     .info-item, .footer-social { justify-content: center; }
     .footer-bottom { flex-direction: column; gap: 15px; text-align: center; }
+    .diferenciais-conteudo {
+        padding: 40px 28px;
+    }
+
+    .diferenciais {
+        width: calc(100% - 24px);
+    }
+
+    .diferenciais-conteudo .lista-diferenciais {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .diferenciais-conteudo p,
+    .diferenciais-conteudo .lista-diferenciais li {
+        text-align: left;
+    }
+
+    .diferenciais-conteudo h2,
+    .diferenciais-conteudo p {
+        max-width: 100%;
+    }
 }
 
 /* ============================================================
