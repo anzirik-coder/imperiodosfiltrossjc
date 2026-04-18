@@ -344,15 +344,71 @@ nav > a {
     line-height: 1.2;
     margin: 10px 0 0;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    text-wrap: balance;
+}
+
+.post-article picture {
+    display: block;
+    padding: 0 24px;
+}
+
+.post-article picture img {
+    display: block;
+}
+
+.post-article section {
+    padding: 0 24px 28px;
+}
+
+.post-article blockquote {
+    border-radius: 0 12px 12px 0;
 }
 
 @media (max-width: 768px) {
+    .post-article {
+        border-radius: 14px;
+    }
+
     .post-header {
         padding: 24px 18px;
+        margin-bottom: 22px;
     }
 
     .post-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
+        line-height: 1.15;
+    }
+
+    .post-kicker {
+        font-size: 0.78rem;
+    }
+
+    .post-article picture,
+    .post-article section {
+        padding-left: 18px;
+        padding-right: 18px;
+    }
+
+    .post-article section {
+        padding-bottom: 22px;
+    }
+
+    .post-article picture img {
+        height: auto !important;
+        max-height: 260px;
+        margin-bottom: 22px !important;
+    }
+
+    .post-article h2 {
+        font-size: 1.45rem;
+        line-height: 1.25;
+    }
+
+    .post-article p,
+    .post-article li,
+    .post-article blockquote {
+        font-size: 1rem !important;
+        line-height: 1.7 !important;
     }
 }
 
