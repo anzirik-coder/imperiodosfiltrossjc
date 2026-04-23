@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initCookieBanner();
 });
 
+var COMPONENT_CACHE_VERSION = '2026-04-22-1';
+
 async function loadComponent(elementId, componentPath, basePath) {
     const placeholder = document.getElementById(elementId);
     if (!placeholder) return;
@@ -36,7 +38,7 @@ async function loadComponent(elementId, componentPath, basePath) {
 }
 
 async function fetchComponentWithCache(componentPath) {
-    const cacheKey = 'component-cache:' + componentPath;
+    const cacheKey = 'component-cache:' + COMPONENT_CACHE_VERSION + ':' + componentPath;
     const cached = sessionStorage.getItem(cacheKey);
 
     if (cached) {
